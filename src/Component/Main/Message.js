@@ -30,13 +30,16 @@ export default function Message() {
 
     try {
       // Send a POST request using Fetch
-      const res = await fetch("http://localhost:3001/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ message, recipient }),
-      });
+      const res = await fetch(
+        "https://christmas-dexapp.onrender.com/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message, recipient }),
+        }
+      );
 
       // Check if the response is ok (status in the range 200-299)
       if (!res.ok) {
